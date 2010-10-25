@@ -1,0 +1,86 @@
+
+R version 2.10.1 (2009-12-14)
+Copyright (C) 2009 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(xcms)
+> rawData1=xcmsRaw('/home/sukhdeepsingh/Desktop/AN/data/Negative_Mode_CDF/SYN_URINE_STOCKNEGA1NEW02.CDF')
+> ?xcmsRaw
+xcmsRaw                  package:xcms                  R Documentation
+
+_C_o_n_s_t_r_u_c_t_o_r _f_o_r _x_c_m_s_R_a_w _o_b_j_e_c_t_s _w_h_i_c_h _r_e_a_d_s _N_e_t_C_D_F/_m_z_X_M_L _f_i_l_e_s
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     This function handles the task of reading a NetCDF/mzXML file
+     containing LC/MS or GC/MS data into a new ‘xcmsRaw’ object. It
+     also transforms the data into profile (maxrix) mode for efficient
+     plotting and data exploration.
+
+_U_s_a_g_e:
+
+     xcmsRaw(filename, profstep = 1, profmethod = "intlin", profparam =
+     list(), includeMSn=FALSE)
+     
+_A_r_g_u_m_e_n_t_s:
+
+filename: path name of the NetCDF or mzXML file to read
+
+profstep: step size (in m/z) to use for profile generation
+
+profmethod: method to use for profile generation
+
+profparam: extra parameters to use for profile generation
+
+includeMSn: only for XML file formats: also read MS$^n$ (Tandem-MS of
+          Ion-/Orbi- Trap spectra)
+
+_D_e_t_a_i_l_s:
+
+     If ‘profstep’ is set to 0, no profile matrix is generated.  Unless
+     includeMSn=TRUE only first level MS data is read, not MS/MS, etc.)
+
+_V_a_l_u_e:
+
+     A ‘xcmsRaw’ object.
+
+_A_u_t_h_o_r(_s):
+
+     Colin A. Smith, <email: csmith@scripps.edu>
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     NetCDF file format: <URL:
+     http://my.unidata.ucar.edu/content/software/netcdf/> <URL:
+     http://www.astm.org/Standards/E2077.htm> <URL:
+     http://www.astm.org/Standards/E2078.htm>
+
+     mzXML file format: <URL:
+     http://sashimi.sourceforge.net/software_glossolalia.html>
+
+     PSI-MS working group who developed mzData and mzML file formats:
+     <URL: http://www.psidev.info/index.php?q=node/80>
+
+     Parser used for XML file formats: <URL:
+     http://tools.proteomecenter.org/wiki/index.php?title=Software:RAMP>
+
+_S_e_e _A_l_s_o:
+
+     ‘xcmsRaw-class’, ‘profStep’, ‘profMethod’ ‘xcmsFragments’
+
+
+> 
